@@ -1,47 +1,43 @@
 <script>
-    import { browser } from '$app/environment';
+    import scrollTo from "../lib/js/scroll";
     import logo from "../lib/images/SH.png"
-    function scrollToHome(){
-        if (browser) {
-            // @ts-ignore
-            document.getElementById('home').scrollIntoView({
-                behavior: "smooth",
-                block: "end",
-            })
-        };
-    } 
-    function scrollToAbout() {
-        if (browser) {
-            // @ts-ignore
-            document.getElementById('about').scrollIntoView({
-                behavior: "smooth",
-                block: "end",
-            })
-        };
+    import menupic from "../lib/images/menu.png"
+	import { draw } from 'svelte/transition';
+    import { isDrawerOpen } from "../lib/js/store"
+    import { getDrawerStore } from "@skeletonlabs/skeleton";
+
+    $: outerHeight = 0
+    $: innerHeight = 0
+    $: outerWidth = 0
+    $: innerWidth = 0
+
+    $: drawerStore = getDrawerStore()
+
+    function clickDrawer(isDrawerOpenValue) {
+        console.log(drawerStore)
+        isDrawerOpen.set(!isDrawerOpenValue)
+        if ($isDrawerOpen) {
+            const menuDrawerSettings = {
+                position: "right",
+                bgDrawer: "bg-[#FFFFFF]",
+                width: "w-full",
+                height: "h-full",
+                zIndex: "z-10",
+            }
+            drawerStore.open(menuDrawerSettings)
+        }
+        else {
+            drawerStore.close()
+        }
     }
-    function scrollToService() {
-        if (browser) {
-            // @ts-ignore
-            document.getElementById('service').scrollIntoView({
-                behavior: "smooth",
-                block: "end",
-            })
-        };
-    }
-    function scrollToContact() {
-        if (browser) {
-            // @ts-ignore
-            document.getElementById('contact').scrollIntoView({
-                behavior: "smooth",
-                block: "end",
-            })
-        };
-    }
+
 </script>
 
-<div class="flex h-full font-noto">
-    <div class="flex h-full w-1/4 items-center">
-        <img class="ml-20 h-2/5" src={logo} alt="logo"/>
+<svelte:window bind:innerWidth bind:outerWidth bind:innerHeight bind:outerHeight />
+
+<div class="flex h-full font-noto mr-14">
+    <div class="flex h-full w-10/12 lg:w-1/4 items-center z-50">
+        <img class="ml-4 lg:ml-10 h-2/5" src={logo} alt="logo"/>
         <div class="grid grid-cols-1 ml-4 items-center">
             <div class="flex w-full text-xl text-center" >
                 <p class="flex-1">沈</p>
@@ -54,17 +50,20 @@
             <p class="font-mono en_name" >SHEN ATTORNEY-AT-LAW</p>
         </div>
     </div>
-    <div class="ml-12 w-6/12 h-full">
-        <div class="grid grid-cols-1 h-full">
-            <div class="flex text-sm items-center font-semibold menu">
-                <button class="flex-1 btn" on:click={scrollToHome}>關於我們</button>
-                <button class="flex-1 btn" on:click={scrollToAbout}>律師介紹</button>
-                <button class="flex-1 btn" on:click={scrollToService}>服務項目</button>
-                <button class="flex-1 btn">經驗分享</button>
-                <button class="flex-1 btn">法普文章</button>
-                <button class="flex-1 btn">最新消息</button>
-                <button class="flex-1 btn" on:click={scrollToContact}>問題諮詢</button>
-            </div>
+    <div class="w-full h-full z-50">
+        <div class="grid grid-cols-1 mr-14 h-full">
+            {#if outerWidth > 1024}
+                <div class="flex flex-row-reverse text-xl items-center font-semibold tracking-widest menu">
+                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("contact")}>聯絡我們</button>
+                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("service")}>服務項目</button>
+                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("about")}>律師介紹</button>
+                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("home")}>關於我們</button>
+                </div>
+            {:else}
+                <button class="flex flex-row-reverse visible items-center" on:click={() => clickDrawer($isDrawerOpen)}>
+                    <img class="h-10 menupic" src={menupic} alt="menu">
+                </button>
+            {/if}
         </div>
     </div>
 </div>
@@ -107,6 +106,10 @@
 
     .btn:hover {
         color: #487B9E;
+    }
+
+    .menupic {
+        opacity: 0.7;
     }
 
 </style>
