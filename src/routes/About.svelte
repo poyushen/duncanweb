@@ -8,9 +8,9 @@
         <p class="ml-4 text-3xl md:text-4xl font-black font-noto"> 律師介紹</p>
     </div>
     <div class="w-full h-5/6 info text-base font-noto">
-        <div class="md:flex items-center h-full">
-            <img class="pl-14 md:pl-24 w-5/6 md:w-3/6 lg:w-2/6 pt-4" src={lawyericon} alt="lawyer"/>
-            <div class="w-full pl-14 md:pl-24 lg:pl-36">
+        <div class="lg:flex items-center h-full">
+            <img class="pl-4 w-5/6 md:w-4/6 lg:w-2/6 pt-4" src={lawyericon} alt="lawyer"/>
+            <div class="w-full pl-4 lg:pl-36">
                 <p class="text-2xl mt-4 font-bold">沈柏亘律師</p>
                 <p class="mt-6 underline underline-offset-4 font-bold degree">學歷</p>
                 <p class="mt-2 desc text-sm md:text-base">國立政治大學法律系學士<br>L.L.B. National Chengchi University</p>

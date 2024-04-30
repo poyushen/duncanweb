@@ -28,51 +28,40 @@
 </svelte:head>
 
 <div class="h-screen app">
-	<header class="mx-14 w-screen">
+	<header class="w-screen">
 		<Drawer>
 			<div class="topPadding"></div>
 			<div class="grid grid-cols-1">
-            	<button class="text-2xl h-24" on:click={() => scrollAndClose("home")}>關於我們</button>
+            	<button class="text-xl h-16" on:click={() => scrollAndClose("homeimg")}>關於我們</button>
 				<hr>
-				<button class="text-2xl h-24" on:click={() => scrollAndClose("about")}>律師介紹</button>
+				<button class="text-xl h-16" on:click={() => scrollAndClose("about")}>律師介紹</button>
 				<hr>
-            	<button class="text-2xl h-24" on:click={() => scrollAndClose("service")}>服務項目</button>
+            	<button class="text-xl h-16" on:click={() => scrollAndClose("service")}>服務項目</button>
 				<hr>
-            	<button class="text-2xl h-24" on:click={() => scrollAndClose("contact")}>聯絡我們</button>
+            	<button class="text-xl h-16" on:click={() => scrollAndClose("contact")}>聯絡我們</button>
 				<hr>
 			</div>
 		</Drawer>
 		<Header />
 	</header>
-	<main>
+	<main class="w-screen">
 		<div class="topPadding"></div>
-		<div class="mx-14 w-fit firstpic">
+		<div id="homeimg" class="mx-4 lg:mx-14 w-fit firstpic info">
 			<Firstpic />
 		</div>
-		<div id="home" class="mx-14 w-fit h-fit">
+		<div id="home" class="mx-4 lg:mx-14 mt-4 lg:mt-0 w-fit h-fit">
 			<Home />
 		</div>
-		<div id="about" class="mx-14 w-fit h-fit">
+		<div id="about" class="mx-4 lg:mx-14 mt-4 lg:mt-16 w-fit h-fit info">
 			<About />
 		</div>
-		<div id="service" class="w-full h-fit">
+		<div id="service" class="mx-4 lg:mx-14 pt-4 w-fit h-fit info">
 			<Service />
 		</div>
-		<!-- <div id="experience" class="w-full info">
-			<Experience />
-		</div>
-		<div id="paragraph" class="w-full info">
-			<Paragraph />
-		</div> -->
-		<div id="contact" class="w-full info">
+		<div id="contact" class="px-4 lg:px-14 mt-4 lg:mt-16 w-full h-full info">
 			<Contact />
 		</div>
-		<!-- <slot /> -->
 	</main>
-
-	<!-- <footer>
-		Footer
-	</footer> -->
 </div>
 
 <style>
@@ -96,11 +85,7 @@
 		height: 30%;
 	}
 	.info {
-		/* height: 88%; */
-	}
-
-	.subhome {
-		/* height: 58%; */
+		scroll-margin-top: 80px;
 	}
 
 	main {

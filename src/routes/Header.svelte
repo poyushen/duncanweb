@@ -20,7 +20,7 @@
             const menuDrawerSettings = {
                 position: "right",
                 bgDrawer: "bg-[#FFFFFF]",
-                width: "w-full",
+                width: "w-4/5",
                 height: "h-full",
                 zIndex: "z-10",
             }
@@ -35,8 +35,8 @@
 
 <svelte:window bind:innerWidth bind:outerWidth bind:innerHeight bind:outerHeight />
 
-<div class="flex h-full font-noto mr-14">
-    <div class="flex h-full w-10/12 lg:w-1/4 items-center z-50">
+<div class="flex h-full font-noto mx-4 lg:mx-14">
+    <div class="flex h-full w-full lg:w-1/4 items-center z-50">
         <img class="ml-4 lg:ml-10 h-2/5" src={logo} alt="logo"/>
         <div class="grid grid-cols-1 ml-4 items-center">
             <div class="flex w-full text-xl text-center" >
@@ -50,18 +50,18 @@
             <p class="font-mono en_name" >SHEN ATTORNEY-AT-LAW</p>
         </div>
     </div>
-    <div class="w-full h-full z-50">
-        <div class="grid grid-cols-1 mr-14 h-full">
+    <div class="lg:w-full h-full z-50">
+        <div class="grid grid-cols-1 h-full">
             {#if outerWidth > 1024}
                 <div class="flex flex-row-reverse text-xl items-center font-semibold tracking-widest menu">
                     <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("contact")}>聯絡我們</button>
                     <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("service")}>服務項目</button>
                     <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("about")}>律師介紹</button>
-                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("home")}>關於我們</button>
+                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("homeimg")}>關於我們</button>
                 </div>
             {:else}
                 <button class="flex flex-row-reverse visible items-center" on:click={() => clickDrawer($isDrawerOpen)}>
-                    <img class="h-10 menupic" src={menupic} alt="menu">
+                    <img class="h-8 lg:h-10 menupic" src={menupic} alt="menu">
                 </button>
             {/if}
         </div>

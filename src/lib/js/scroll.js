@@ -6,7 +6,7 @@ export default function scrollTo(eleid){
         // @ts-ignore
         document.getElementById(eleid).scrollIntoView({
             behavior: "smooth",
-            block: "end",
+            block: "start",
         })
     };
 }
