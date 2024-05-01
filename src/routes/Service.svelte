@@ -1,7 +1,6 @@
 <script>
-    import lawyericon from "../lib/images/ps.jpg"
-    import phoneicon from "../lib/images/phone.jpeg"
     import serviceDescs from "../lib/statics/service.json"
+    import gavelIcon from "../lib/images/gavel.png"
     
     $: outerWidth = 0
 </script>
@@ -10,10 +9,11 @@
 
 <div class="h-full">
     <div class="flex w-full h-1/6 items-center title">
-        <p class="ml-4 w-16 text-4xl lg:text-5xl font-bold font-sedan point">III.</p>
+        <!-- <p class="ml-4 w-16 text-4xl lg:text-5xl font-bold font-sedan point">III.</p> -->
+        <img class="ml-4 w-12" alt="gavel" src={gavelIcon}>
         <p class="ml-4 text-3xl lg:text-4xl font-black font-noto">服務項目</p>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-4 h-5/6 py-2 lg:py-10 lg:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-4 h-5/6 py-2 lg:py-10 lg:px-16">
         {#each serviceDescs as service, i}
             {#if outerWidth > 1024}
                 <div class="border rounded-xl m-4 p-6 shadow-md {(i<4 && i%2==0) || (i>3 && i%2==1) ? 'card-contrast' : 'card'}">

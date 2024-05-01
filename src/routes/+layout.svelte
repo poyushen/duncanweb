@@ -9,7 +9,6 @@
 	import scrollTo from "../lib/js/scroll.js"
 	import { Drawer, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
     import { isDrawerOpen } from "../lib/js/store"
-	import balanceIcon from "../lib/images/balance.png"
 
 	$: initializeStores()
 	$: drawerStore = getDrawerStore()
@@ -34,11 +33,11 @@
 			<div class="grid grid-cols-1">
             	<button class="text-xl h-16" on:click={() => scrollAndClose("homeimg")}>關於我們</button>
 				<hr>
-				<button class="text-xl h-16" on:click={() => scrollAndClose("about")}>律師介紹</button>
+				<button class="text-xl h-16" on:click={() => scrollAndClose("about")}>主持律師</button>
 				<hr>
             	<button class="text-xl h-16" on:click={() => scrollAndClose("service")}>服務項目</button>
 				<hr>
-            	<button class="text-xl h-16" on:click={() => scrollAndClose("contact")}>聯絡我們</button>
+            	<button class="text-xl h-16" on:click={() => scrollAndClose("contact")}>與本所聯絡</button>
 				<hr>
 			</div>
 		</Drawer>
@@ -55,10 +54,10 @@
 		<div id="about" class="mx-4 lg:mx-14 mt-4 lg:mt-16 w-fit h-fit info">
 			<About />
 		</div>
-		<div id="service" class="mx-4 lg:mx-14 pt-4 w-fit h-fit info">
+		<div id="service" class="mx-4 lg:mx-14 mt-16 lg:mt-16 w-fit h-fit info">
 			<Service />
 		</div>
-		<div id="contact" class="px-4 lg:px-14 mt-4 lg:mt-16 w-full h-full info">
+		<div id="contact" class="px-4 lg:px-14 mt-4 lg:mt-16 w-full h-fit info">
 			<Contact />
 		</div>
 	</main>
@@ -85,7 +84,7 @@
 		height: 30%;
 	}
 	.info {
-		scroll-margin-top: 80px;
+		scroll-margin-top: 90px;
 	}
 
 	main {

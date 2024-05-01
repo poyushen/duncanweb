@@ -54,9 +54,9 @@
         <div class="grid grid-cols-1 h-full">
             {#if outerWidth > 1024}
                 <div class="flex flex-row-reverse text-xl items-center font-semibold tracking-widest menu">
-                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("contact")}>聯絡我們</button>
+                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("contact")}>與本所聯絡</button>
                     <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("service")}>服務項目</button>
-                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("about")}>律師介紹</button>
+                    <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("about")}>主持律師</button>
                     <button class="btn ml-6 invisible md:visible" on:click={() => scrollTo("homeimg")}>關於我們</button>
                 </div>
             {:else}
