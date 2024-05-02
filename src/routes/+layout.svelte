@@ -9,6 +9,7 @@
 	import scrollTo from "../lib/js/scroll.js"
 	import { Drawer, initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
     import { isDrawerOpen } from "../lib/js/store"
+	import Footer from "./Footer.svelte";
 
 	$: initializeStores()
 	$: drawerStore = getDrawerStore()
@@ -60,6 +61,9 @@
 		<div id="contact" class="px-4 lg:px-14 mt-4 lg:mt-16 w-full h-fit info">
 			<Contact />
 		</div>
+		<footer class="w-screen">
+			<Footer />
+		</footer>
 	</main>
 </div>
 
@@ -74,8 +78,8 @@
 		background-color: white;
 		height: 12%;
 		position: fixed;
-
 	}
+
 	.topPadding {
 		height: 12%;
 	}
@@ -83,8 +87,9 @@
 	.firstpic {
 		height: 30%;
 	}
+
 	.info {
-		scroll-margin-top: 90px;
+		scroll-margin-top: 80px;
 	}
 
 	main {

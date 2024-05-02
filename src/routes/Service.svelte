@@ -33,12 +33,8 @@
 </div>
 
 <style>
-    .point {
-        color: #487B9E;
-    }
-
     .title {
-        padding-top: 2%;
+        padding-top: 5%;
         height: 15%;
         color: #20313C;
     }

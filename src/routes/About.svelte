@@ -1,5 +1,5 @@
 <script>
-    import lawyericon from "../lib/images/ps.jpg"
+    import lawyericon from "../lib/images/poshuan.jpg"
     import gavelIcon from "../lib/images/gavel.png"
     
     $: outerWidth = 0
@@ -48,10 +48,6 @@
 </div>
 
 <style>
-    .point {
-        color: #487B9E;
-    }
-
     .title {
         padding-top: 5%;
         height: 15%;
@@ -70,9 +66,4 @@
         line-height: 1.5;
         color: #20313C;
     }
-    
-    .info1 {
-        height: 100%;
-    }
-
 </style>

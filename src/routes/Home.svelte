@@ -23,10 +23,6 @@
 </div>
 
 <style>
-    .point {
-        color: #487B9E;
-    }
-
     .title {
         padding-top: 5%;
         height: 15%;
@@ -37,13 +33,8 @@
         height: 85%;
     }
     
-    .degree {
-        color: #487B9E;
-    }
-    
     .desc {
         line-height: 2.0;
         color: #20313C;
     }
-
 </style>
