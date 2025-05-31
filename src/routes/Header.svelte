@@ -48,7 +48,7 @@
 						>服務項目</button
 					>
 					<button class="btn ml-6 invisible md:visible" on:click={() => scrollTo('about')}
-						>主持律師</button
+						>律師團隊</button
 					>
 					<button class="btn ml-6 invisible md:visible" on:click={() => scrollTo('homeimg')}
 						>關於正熹</button

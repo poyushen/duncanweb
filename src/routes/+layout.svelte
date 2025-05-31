@@ -33,7 +33,7 @@
 			<div class="grid grid-cols-1">
 				<button class="text-xl h-16" on:click={() => scrollAndClose('homeimg')}>關於正熹</button>
 				<hr />
-				<button class="text-xl h-16" on:click={() => scrollAndClose('about')}>主持律師</button>
+				<button class="text-xl h-16" on:click={() => scrollAndClose('about')}>律師團隊</button>
 				<hr />
 				<button class="text-xl h-16" on:click={() => scrollAndClose('service')}>服務項目</button>
 				<hr />
