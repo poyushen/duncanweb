@@ -7,7 +7,7 @@
 </script>
 
 <svelte:window bind:outerWidth />
-<div class="h-full">
+<div class="h-full content">
 	<div class="flex w-full h-1/6 items-center title">
 		<!-- <p class="ml-4 w-16 text-4xl md:text-5xl font-bold font-sedan point">II.</p> -->
 		<img class="ml-4 w-12" alt="gavel" src={gavelIcon} />

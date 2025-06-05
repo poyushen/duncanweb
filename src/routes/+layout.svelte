@@ -26,7 +26,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div class="app">
+<div class="h-screen app">
 	<header class="w-screen">
 		<Drawer>
 			<div class="topPadding"></div>
@@ -43,7 +43,7 @@
 		</Drawer>
 		<Header />
 	</header>
-	<main class="w-screen mt-24">
+	<main class="w-screen">
 		<div class="topPadding"></div>
 		<div id="homeimg" class="mx-4 lg:mx-14 w-fit firstpic info">
 			<Firstpic />
@@ -71,12 +71,10 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		background-color: #efefef;
 	}
 
 	header {
-		background-color: #efefef;
-		/* background-color: white; */
+		background-color: white;
 		height: 12%;
 		position: fixed;
 	}
